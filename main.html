@@ -1,0 +1,165 @@
+<html>
+  <head>
+    <style>
+      .picture-block {
+        width: 150px;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+        margin: 10px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif; color: #554640;}
+      
+      body {
+        background-image: url("background.jpg");
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+         align-items: center;
+         height: 100vh;
+         width: 100vw;
+          margin: 0;
+         background: #CDE6F5;
+      }
+
+      .shirt:hover {
+      transform: scale(1.1);
+     }
+     .shirt {
+     transition: 0.4s;
+     }
+
+      .juutas {
+        font-family: "Karma", sans-serif;
+        font-size: 26px;
+        color: #554640;
+        margin-top: 140;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 36px;
+        text-align: center;
+      }
+
+      button {
+        background-color: #c9351a;
+        color: rgb(255, 255, 255);
+        padding: 16px 32px;
+        font-size: 16px;
+        border-radius: 4px;
+        margin-top: 60px;
+      }
+      .picture-grid {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .selected {
+        border: 2px solid #4CAF50;
+      }
+
+.waveBtn {
+  background: transparent;
+  height: 10px;
+  width: 55px;
+  border-radius: 9999rem;
+  border: 1px solid #554640;
+  position: relative;
+  overflow: hidden;
+  transform: scale(3);
+}
+
+.waveImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wave {
+
+  animation: moveTheWave 3400ms linear infinite;
+  stroke-dasharray: 0 16 101 16;
+}
+
+@keyframes moveTheWave {
+  0% {
+    stroke-dashoffset: -3;
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    stroke-dashoffset: -138;
+    transform: translate3d(-90px, 0, 0);
+  }
+}
+    </style>
+  </head>
+  <body>
+
+  
+    <h1>Dripons</h1>
+    <h2 id="tests">Kā tu jūties?</h2>
+    <div class="picture-grid">
+      <div class="picture-block shirt" style="background-image: url('https://asda.scene7.com/is/image/Asda/5059181953631?hei=684&wid=516&qlt=85&fmt=pjpg&resmode=sharp&op_usm=1.1,0.5,0,0&defaultimage=default_details_George_rd');" onclick="baltsKrekls()">
+      <br> <p class="juutas">Zesty</p></div>
+      <div class="picture-block shirt" style="background-image: url('http://cdn.shopify.com/s/files/1/0529/5724/9712/products/ns_d480678polo-kokos-GRANT-D555-MAROON-01.jpg?v=1670942461');" onclick="zestKrekls()">
+      <br> <p class="juutas">Zesty</p></div>
+      <div class="picture-block shirt" style="background-image: url('https://textilmacher.com/assets/php/product_images/?size=small&file=https://cdn.shopify.com/s/files/1/0092/1645/8799/products/27998-premium-unisex-pullover-besticken-stickerei-bedrucken-textildruck-mit-logo-burgundy-rot-front_2560x.jpg?v=1670421731&crop=top');" onclick="dzemperis()">
+      <br> <p class="juutas">Zesty</p></div>
+      <div class=" picture-block shirt" style="background-image: url('https://i.pinimg.com/736x/28/91/6a/28916afe0a2af9d651f93ae42f4093ba.jpg');" onclick="zakete()">
+      <br> <p class="juutas">Zesty</p></div>
+    </div>
+   <br> <button class="waveBtn">
+        <svg width="40" height="30" viewBox="5 0 80 60" class="waveImg"><path class="wave" fill="none" stroke="#554640" stroke-width="3" stroke-linecap="round" d="M 0 37.5 c 7.684299348848887 0 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15" />
+         </svg>
+      </button>
+    </br>
+  </br>
+    <p id="selected">No item selected</p>
+    <script>
+    var drebe = "0";
+      
+
+      function baltsKrekls() {
+        drebe = "baltss krekls";
+        sessionStorage.setItem("drebeOnline", "balts krekls"); //seto drebes kategoriju 
+        document.getElementById("selected").innerHTML = drebe;
+
+        location.href='dzemperis.html';
+      }
+
+      function zestKrekls() {
+        drebe = "zesty krekls";
+        sessionStorage.setItem("drebeOnline", "zesty krekls");  
+        document.getElementById("selected").innerHTML = drebe;
+
+        location.href='dzemperis.html';
+      }
+
+      function dzemperis() {
+        drebe = "dzemperis";
+        sessionStorage.setItem("drebeOnline", "džemperis"); 
+        document.getElementById("selected").innerHTML = drebe;
+
+        location.href='dzemperis.html';
+      }
+
+      function zakete() {
+        drebe = "zakete";
+        sessionStorage.setItem("drebeOnline", "žakete"); 
+        document.getElementById("selected").innerHTML = drebe;
+
+        location.href='dzemperis.html';
+      }
+    </script>
+  
+  </body>
+</html>

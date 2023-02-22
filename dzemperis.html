@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>dzemperis</title>
+    <style>
+      #virsraksts {font-size: 52px;}
+      .poga {
+        width: 150px;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+        margin: 10px;
+        border-radius: 16px;
+        cursor: pointer;
+        opacity: 0.75;
+        transition: 0.4s;
+        border: none;
+      }
+      .poga:hover {opacity: 1}
+
+      .sarkana:hover {
+      background-color: #ff0000;
+      transform: scale(1.1);}
+      .zila:hover {
+      background-color: #1100ff;
+      transform: scale(1.1);}
+      .balta:hover {
+      background-color: #ffffff;
+      transform: scale(1.1);}
+      .melna:hover {
+      background-color: #000000;
+      transform: scale(1.1);}
+      .roza:hover {
+      background-color: #ff00ff;
+      transform: scale(1.1);}
+      .adas:hover {
+      background-color: #e4bb94;
+      transform: scale(1.1);}
+      .peleka:hover {
+      background-color: #5f5f5f;
+      transform: scale(1.1);}
+      .bruna:hover {
+      background-color: #693001;
+      transform: scale(1.1);}
+
+
+      .sarkana {background-color: #ff0000;}
+      .zila {background-color: #1100ff;}
+      .balta {background-color: #ffffff;}
+      .melna {background-color: #000000;
+        opacity: 0.85;}
+      .roza{background-color: #ff00ff;}
+      .adas{background-color: #e4bb94;}
+      .peleka{background-color: #5f5f5f;}
+      .bruna{background-color: #693001;}
+
+
+      .pogas {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif; color: #554640;}
+      
+      body {
+        background-image: url("background.jpg");
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+         align-items: center;
+         height: 100vh;
+         width: 100vw;
+          margin: 0;
+         background: #CDE6F5;
+      }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  overflow: auto;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 20% 100%;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+.waveBtn {
+  background: transparent;
+  height: 10px;
+  width: 55px;
+  border-radius: 9999rem;
+  border: 1px solid #554640;
+  position: relative;
+  overflow: hidden;
+  transform: scale(3);
+}
+
+.waveImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wave {
+
+  animation: moveTheWave 3400ms linear infinite;
+  stroke-dasharray: 0 16 101 16;
+}
+
+@keyframes moveTheWave {
+  0% {
+    stroke-dashoffset: -3;
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    stroke-dashoffset: -138;
+    transform: translate3d(-90px, 0, 0);
+  }
+}
+    </style>
+  </head>
+  <body>
+    
+    <nav>
+      <div class="picture-block" style="background-image: url('https://cdn-icons-png.flaticon.com/512/93/93634.png');" onclick="location.href='./main.html'">
+        <br> </div>
+ 
+    </nav>
+
+    <h1 id="virsraksts">Kādu krāsu tu vilksi?</h1>
+    <div class="pogas">
+      <button class="poga sarkana" onclick="sarkanaKrasa()">
+      <br> </button>
+      <button class="poga zila" onclick="zilaKrasa()">
+      <br> </button>
+      <button class="poga balta" onclick="baltaKrasa()">
+      <br> </button>
+      <button class="poga melna" onclick="melnaKrasa()">
+      <br> </button>
+      <button class="poga roza" onclick="rozaKrasa()">
+      <br> </button>
+      <button class="poga adas" onclick="adasKrasa()">
+      <br> </button>
+      <button class="poga peleka" onclick="pelekaKrasa()">
+      <br> </button>
+      <button class="poga bruna" onclick="brunaKrasa()">
+      <br> </button> 
+    
+
+    </div>
+    <input id="pogaSub" type="button" value="Ola" disabled="true" />
+      
+    <p id="amogus"></p>
+
+    <script>
+      var drebe = sessionStorage.getItem("drebeOnline");//atgust drebes kategoriju no ipriekseja page
+      var krasa = "1"
+    
+      function sarkanaKrasa() {
+      
+      krasa = "sarkan";
+      sessionStorage.setItem("krasaOnline", "sarkan");
+      if (drebe == "žakete") {
+        document.getElementById("amogus").innerHTML = krasa + "ā + " + drebe;
+        }
+        else {
+          document.getElementById("amogus").innerHTML = krasa + "s + " + drebe; 
+        }
+        EnableDisable()
+      }
+
+      function zilaKrasa() {
+      krasa = "zil";
+      sessionStorage.setItem("krasaOnline", "zil");
+      if (drebe == "žakete") {
+        document.getElementById("amogus").innerHTML = krasa + "ā + " + drebe;
+        }
+        else {
+          document.getElementById("amogus").innerHTML = krasa + "s + " + drebe; 
+        }
+        EnableDisable()
+      }
+
+      function baltaKrasa() {
+      krasa = "balt";
+      sessionStorage.setItem("krasaOnline", "balt");
+      if (drebe == "žakete") {
+        document.getElementById("amogus").innerHTML = krasa + "ā + " + drebe;
+        }
+        else {
+          document.getElementById("amogus").innerHTML = krasa + "s + " + drebe; 
+        }
+        EnableDisable()
+      }
+
+      function melnaKrasa() {
+      krasa = "meln";
+      sessionStorage.setItem("krasaOnline", "meln");
+      if (drebe == "žakete") {
+        document.getElementById("amogus").innerHTML = krasa + "ā + " + drebe;
+        }
+        else {
+          document.getElementById("amogus").innerHTML = krasa + "s + " + drebe; 
+        }
+        EnableDisable()
+      }
+
+      function rozaKrasa() {
+      krasa = "roz";
+      sessionStorage.setItem("krasaOnline", "roz");
+      if (drebe == "žakete") {
+        document.getElementById("amogus").innerHTML = krasa + "ā + " + drebe;
+        }
+        else {
+          document.getElementById("amogus").innerHTML = krasa + "s + " + drebe; 
+        }
+        EnableDisable()
+      }
+
+      function adasKrasa() {
+      krasa = "viegli brūn";
+      sessionStorage.setItem("krasaOnline", "viegli brūn");
+      if (drebe == "žakete") {
+        document.getElementById("amogus").innerHTML = krasa + "ā + " + drebe;
+        }
+        else {
+          document.getElementById("amogus").innerHTML = krasa + "s + " + drebe; 
+        }
+        EnableDisable()
+      }
+
+      function pelekaKrasa() {
+      krasa = "pelek";
+      sessionStorage.setItem("krasaOnline", "pelēk");
+      if (drebe == "žakete") {
+        document.getElementById("amogus").innerHTML = krasa + "ā + " + drebe;
+        }
+        else {
+          document.getElementById("amogus").innerHTML = krasa + "s + " + drebe; 
+        }
+        EnableDisable()
+      }
+
+      function brunaKrasa() {
+      krasa = "brun";
+      sessionStorage.setItem("krasaOnline", "brūn");
+       if (drebe == "žakete") {
+        document.getElementById("amogus").innerHTML = krasa + "ā + " + drebe;
+        }
+        else {
+          document.getElementById("amogus").innerHTML = krasa + "s + " + drebe; 
+        }
+        EnableDisable()
+      }
+
+      function EnableDisable() {
+        //Reference the Button.
+        
+        amogus = document.getElementById("amogus").innerHTML
+        //Verify the TextBox value.
+        if (amogus == null) {
+            //Enable the TextBox when TextBox has value.
+            document.getElementById("pogaSub").disabled = true;
+        } else {
+            //Disable the TextBox when TextBox is empty.
+            pogaSub.disabled = false;
+        }
+    };
+    
+    </script>
+  </body>
+</html>
