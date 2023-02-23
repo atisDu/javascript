@@ -17,32 +17,73 @@
         transition: 0.4s;
         border: none;
       }
-      .poga:hover {opacity: 1}
+
+#amogus {
+      color:#242121;
+
+}
+.button-54 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+      
+      
+
+      .poga:hover {
+        font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #41454b;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  transform: scale(1.1);
+  
+
+        opacity: 1
+      }
 
       .sarkana:hover {
       background-color: #ff0000;
-      transform: scale(1.1);}
+      }
       .zila:hover {
-      background-color: #1100ff;
-      transform: scale(1.1);}
+      background-color: #1100ff;}
       .balta:hover {
-      background-color: #ffffff;
-      transform: scale(1.1);}
+      background-color: #ffffff;}
       .melna:hover {
-      background-color: #000000;
-      transform: scale(1.1);}
+      background-color: #000000;}
       .roza:hover {
-      background-color: #ff00ff;
-      transform: scale(1.1);}
+      background-color: #ff00ff;}
       .adas:hover {
-      background-color: #e4bb94;
-      transform: scale(1.1);}
+      background-color: #e4bb94;}
       .peleka:hover {
-      background-color: #5f5f5f;
-      transform: scale(1.1);}
+      background-color: #5f5f5f;}
       .bruna:hover {
-      background-color: #693001;
-      transform: scale(1.1);}
+      background-color: #693001;}
 
 
       .sarkana {background-color: #ff0000;}
@@ -77,65 +118,6 @@
          background: #CDE6F5;
       }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  overflow: auto;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 20% 100%;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.show {display:block;}
-
-.waveBtn {
-  background: transparent;
-  height: 10px;
-  width: 55px;
-  border-radius: 9999rem;
-  border: 1px solid #554640;
-  position: relative;
-  overflow: hidden;
-  transform: scale(3);
-}
-
-.waveImg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.wave {
-
-  animation: moveTheWave 3400ms linear infinite;
-  stroke-dasharray: 0 16 101 16;
-}
-
-@keyframes moveTheWave {
-  0% {
-    stroke-dashoffset: -3;
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    stroke-dashoffset: -138;
-    transform: translate3d(-90px, 0, 0);
-  }
-}
     </style>
   </head>
   <body>
@@ -167,8 +149,7 @@
     
 
     </div>
-    <input id="pogaSub" type="button" value="Ola" disabled="true" />
-      
+    <br> <input id="nakpoga" class="button-54" type="button" value="Tālāk" disabled="true" />
     <p id="amogus"></p>
 
     <script>
@@ -279,10 +260,10 @@
         //Verify the TextBox value.
         if (amogus == null) {
             //Enable the TextBox when TextBox has value.
-            document.getElementById("pogaSub").disabled = true;
+            document.getElementById("nakpoga").disabled = true;
         } else {
             //Disable the TextBox when TextBox is empty.
-            pogaSub.disabled = false;
+            nakpoga.disabled = false;
         }
     };
     
