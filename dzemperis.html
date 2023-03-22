@@ -149,7 +149,7 @@
     
 
     </div>
-    <br> <input id="nakpoga" class="button-54" type="button" value="Tālāk" disabled="true" />
+    <br> <input id="nakpoga" class="button-54" type="button" value="Tālāk" disabled="true" onclick="novirze()"/>
     <p id="amogus"></p>
 
     <script>
@@ -266,6 +266,12 @@
             nakpoga.disabled = false;
         }
     };
+      
+    function novirze() {
+      krasalink = krasaOnline.replace(/\s/g, '');
+      document.getElementById("amogus").innerHTML = document.getElementById("amogus").innerHTML + "<br>" + "c" + krasalink;
+
+    }
     
     </script>
   </body>
