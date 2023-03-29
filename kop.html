@@ -4,9 +4,9 @@
 }
 
 body {
-  font-family: Arial;
+  font-family: "Karma", sans-serif; color: #554640;;
   padding: 20px;
-  background: #f1f1f1;
+  background: #CDE6F5;
 }
 
 /* Header/Blog Title */
@@ -14,7 +14,7 @@ body {
   padding: 30px;
   font-size: 40px;
   text-align: center;
-  background: white;
+  background: rgba(255, 255, 255, 0.911);
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -32,15 +32,15 @@ body {
 }
 
 /* Fake image */
-.fakeimg {
-  background-color: #aaa;
+.img {
+  background-color: #aaaaaa;
   width: 100%;
   padding: 20px;
 }
 
 /* Add a card effect for articles */
 .card {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   margin-top: 20px;
 }
@@ -60,6 +60,28 @@ body {
   margin-top: 20px;
 }
 
+#respond {
+  margin-top: 40px;
+}
+
+#respond input[type='text'],
+#respond input[type='email'],
+#respond textarea {
+  margin-bottom: 10px;
+  display: block;
+  width: 100%;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+
+  line-height: 1.4em;
+}
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
   .leftcolumn, .rightcolumn {
@@ -70,7 +92,7 @@ body {
 </style>
 
 <div class="header">
-  <h2>Blog Name</h2>
+  <h2 id="stils"></h2>
 </div>
 
 <div class="row">
@@ -108,5 +130,39 @@ body {
 </div>
 
 <div class="footer">
-  <h2>Footer</h2>
+  <div id="respond">
+
+    <h2>Izveidot jaunu ierakstu:</h2><br>
+  
+    <form action="post_comment.php" method="post" id="commentform">
+  
+      <label for="comment_author" class="required">Your name</label>
+      <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+  
+      <label for="email" class="required">Your email;</label>
+      <input type="email" name="email" id="email" value="" tabindex="2" required="required">
+  
+      <label for="comment" class="required">Your message</label>
+      <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+  
+      <-- comment_post_ID value hard-coded as 1 -->
+      <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+      <input name="submit" type="submit" value="Submit comment" />
+  
+    </form>
+  
+  </div>
+
+
 </div>
+<script>
+var drebe = sessionStorage.getItem("drebeOnline");
+var krasa = sessionStorage.getItem("krasaOnline");
+
+if (drebe == "žakete") {
+        document.getElementById("stils").innerHTML = krasa + "ā + " + drebe;
+        }
+        else {
+          document.getElementById("stils").innerHTML = krasa + "s + " + drebe; 
+        }
+</script>
